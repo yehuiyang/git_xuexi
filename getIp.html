@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getIp</title>
+</head>
+<script language="JavaScript"> 
+function GetLocalIPAddr(){ 
+	var oSetting = null; 
+	var ip = null; 
+	try{ 
+		oSetting = new ActiveXObject("rcbdyctl.Setting"); 
+		ip = oSetting.GetIPAddress; 
+		alert(ip); 
+		if (ip.length == 0){ 
+			return "没有连接到Internet"; 
+		} 
+		oSetting = null; 
+	}catch(e){ 
+		return ip; 
+	} 
+		return ip; 
+	} 
+	alert(GetLocalIPAddr()) 
+</script>
+<body>
+	<a href="" oncike="GetLocalIPAddr();">获取</a>
+</body>
+</html>
