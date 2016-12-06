@@ -4,8 +4,33 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script type="text/javascript">
-		alent("hallo word!");
+		alert("hallo word!");
+		//var 申明的变量是显示申明
+		//a=1;是隐式 申明
+		//注意：var申明的是局部变量，只有标签和function内部才有效，没有用var的是全局变量
+		var x;
+		console.log(x);
+		x=undifant
+		var array = [124,122,52,'135134',[512,7,'sgae']];//数组,不能写下标，下标是0开始自增的整型
+		console.log(array);
+		var arr={124:122,52:'135134',"test":[512,7,'sgae']};//对象数组
+		console.log(arr);
+		console.log(arr[124]);//整型，浮点型最好用[]调用的方法调用
+		console.log(arr.test);//用对象的调用方法调用对象数组的值
+		console.log(arr["test"]);//字符型也可以用[]的方法调用
+
+		console.log("********************************************");
+		var arr={"q1":'asfaf',"q2":1254,"q3":87,"q4":54};
+		arr['test']='hhsghs';
+		for(var key in arr){
+			console.log(arr[key]);
+		}
+		console.log("********************************************");
+		for(var value of arr){
+			console.log(value);
+		}
 	</script>
+	<script type="text/javascript" src="js1.js"></script>
 </head>
 <body>
 	
