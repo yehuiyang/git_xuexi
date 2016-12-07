@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math解二元一次方程</title>
+	<style type="text/css">
+		input{
+			width: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		function equation(){
+			var num1 = document.getElementById('fc1').value;
+			var num2 = document.getElementById('fc2').value;
+			var num3 = document.getElementById('fc3').value;
+			if (num1==0||num2==0) {
+				alert('该一元二次方程不合法');
+				return 0;
+			}
+			var pfg = num2*num2-(4*num1*num3);
+			var x1;
+			var x2;
+			var message;
+			if (pfg<0){
+				alert('该方程无解');
+				x1 = x2 = '无解';
+			}else if (pfg==0) {
+				alert('该方程只有一个解');
+				x2 = x1 = (-num2+Math.sqrt(pfg))/(2*num1);
+			}else if (pfg>0) {
+				alert('该方程有两个解');
+				x1 = (-num2+Math.sqrt(pfg))/(2*num1);
+				x2 = (-num2+Math.sqrt(pfg))/(2*num1);
+			}
+			message="<p>x1 = "+x1+" ---- x2 = "+x2+"</p>";
+			var jg = document.getElementById('jg');
+			jg.innerHTML=message;
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<p>
+			<input type="text" id="fc1">x<sup>2</sup>+
+			<input type="text" id="fc2">x+
+			<input type="text" id="fc3">=0
+		</p>
+	</div>
+	<button onclick="equation();">解二元一次方程</button>
+	<div id="jg" style="width: 200px;height: 100px;"></div>
+</body>
+</html>
