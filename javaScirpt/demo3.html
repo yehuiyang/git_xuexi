@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.body{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function getStyle(obj,s){
+			return obj.currentStyle?obj.currentStyle[s]:getComputedStyle(obj,null)[s];
+		}
+		function suiji(num){
+			return Math.floor(Math.random()*num);
+		}
+		function cli(){
+			var d = document.getElementById('db');
+			var w = parseInt(getStyle(d,'width'));
+			var h = parseInt(getStyle(d,'height'));
+			var bg = getStyle(d,'background-color');
+			d.style.width = (w+5)+'px';
+			d.style.height = (h+6)+'px';
+			var r = suiji(256);
+			var g = suiji(256);
+			var b = suiji(256);
+			d.style['background-color'] = 'rgb('+r+','+g+','+b+')';
+			var bdw = parseInt(getStyle(d,'border-bottom-width'));
+			r = suiji(256);
+			g = suiji(256);
+			b = suiji(256);
+			d.style['border-bottom-width'] = (bdw+3)+'px';
+			d.style['border-bottom-style'] = 'solid';
+			d.style['border-bottom-color'] = 'rgb('+r+','+g+','+b+')';
+		}
+		// setInterval('cli()',5000);
+	</script>
+</head>
+<body>
+	<div id="db" class="body" onclick="cli()">afadsf</div>
+</body>
+</html>

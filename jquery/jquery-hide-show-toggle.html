@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body,p{margin: 0px;}
+		p{
+			height: 50px;
+			background-color: green;
+		}
+	</style>
+	<!-- <script type="text/javascript" src="jquery-3.1.1/jquery-3.1.1.min.js"></script> -->
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button[name='hide']").click(function(){
+				$("p").hide(2000,function(){
+					alert('slow快速隐藏[3.0以上版本jquery不存在slow]');
+				});
+			});
+
+			$("button[name=show]").click(function(){
+				$("p").show(2000,function(){
+					alert('fast慢速显示[3.0以上版本jquery不存在fast]');
+				});
+			});
+			var state = true;
+			$("button[name=toggle]").click(function(){
+				if (state) {
+					state = false;
+					$("p").toggle(10000,function(){
+						alert('以2000毫秒的速度隐藏或显示');
+					});
+					state = false;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>这是p标签</p>
+	<p>这是p标签</p>
+	<p>这是p标签</p>
+	<p>这是p标签</p>
+	<button type="button" name="hide" >隐藏</button>
+	<button type="button" name="toggle">隐藏或显示</button>
+	<button type="button" name="show">显示</button>
+</body>
+</html>

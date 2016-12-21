@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function equation(){
+			var num1 = prompt('请输入a,b,c');
+			var arr = num1.split(',');
+			if (arr[0]==0) {
+				alert('该一元二次方程不合法');
+				return 0;
+			}
+			var pfg = arr[1]*arr[1]-(4*arr[0]*arr[2]);
+			var x1;
+			var x2;
+			var message;
+			if (pfg<0){
+				alert('该方程无解');
+				x1 = x2 = '无解';
+			}else if (pfg==0) {
+				alert('该方程只有一个解');
+				x2 = x1 = (-arr[1]+Math.sqrt(pfg))/(2*arr[0]);
+			}else if (pfg>0) {
+				alert('该方程有两个解');
+				x1 = (-arr[1]+Math.sqrt(pfg))/(2*arr[0]);
+				x2 = (-arr[1]+Math.sqrt(pfg))/(2*arr[0]);
+			}
+			message="结果：x1 = "+x1+" ---- x2 = "+x2;
+			alert(message);
+		}
+		// equation();
+
+		//可见显示区高
+		console.log(innerHeight);
+
+		//可见显示区宽
+		console.log(innerWidth);
+
+		//返回窗口是否已被关闭
+		console.log(closed);
+
+		//document对象的只读引用
+		console.log(document);
+
+		//document对象的只读引用
+		console.log(history);
+
+		//设置或返回窗口中的框架数量
+		console.log(length);
+
+		//用于窗口或对象的location对象
+		console.log(location);
+
+		//设置或返回窗口的名称
+		console.log(name='window1');
+		console.log(name);
+
+		//Navigator对象的只读引用
+		console.log(Navigator);
+
+		//返回对创建此窗口的窗口的引用
+		console.log(opener);
+
+		//返回此窗口的外部高度
+		console.log(outerHeight);
+
+		//返回此窗口的外部宽度
+		console.log(outerWidth);
+
+		//设置或返回当前页面相对于窗口显示区域左上角的X位置
+		console.log(pageXOffset);
+
+		//设置或返回当前页面相对于窗口显示区域左上角的Y位置
+		console.log(pageYOffset);
+
+		//返回父级窗口
+		console.log(parent);
+
+		//Screen对象的引用
+		console.log(Screen);
+
+		//返回当前窗口的引用
+		console.log(self);
+
+		//返回最顶层窗口引用
+		console.log(top);
+
+		
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+		console.log(innerHeight);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

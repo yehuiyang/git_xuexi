@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str = '欢迎来到宠世吉！    '
+		var arr = str.split('');
+		function pmd(arr){
+			arr.push(arr.shift());
+			document.title=arr.join('');
+		}
+		setInterval("pmd(arr)",500);
+
+
+
+	</script>
+</head>
+<body>
+	<div id="idname" >ceshi</div>
+	<div name="name">ceshi</div>
+	<div name="name">ceshi</div>
+	<div class="class">ceshi</div>
+	<div class="class">ceshi</div>
+	<script type="text/javascript">
+		/**********************************************/
+		console.log(document.getElementById('idname'));
+		console.log(document.getElementsByName('name'));
+		console.log(document.getElementsByTagName('div'));
+		console.log(document.getElementsByClassName('class'));
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<input id="chick" type="text" name="qq">
+	<script type="text/javascript">
+		// var time = function(){
+		// 	this.zxc = function(){
+		// 		return 'this  zxc function';
+		// 	}
+		// 	if (this instanceof time) {
+		// 		this.qwe = function(){
+		// 			return 'this  qwe function';
+		// 		}
+		// 	}else{
+		// 		return new time();
+		// 	}
+		// };
+		// time.prototype.asd = function(){
+		// 	return 'this prototype asd function';
+		// }
+		// var tmp = new time();
+		// console.log(tmp.zxc());
+		document.getElementById('chick').onblur = function(){
+			var text = this.value;
+			var int = new RegExp(/^\b\d{0,}\b$/);
+			var pe = new RegExp(/^[1-9]\d{4,10}$/);
+			if (!int.test(text)) {
+				alert('请输入qq号码！！！');
+			}else if (pe.test(text)) {
+				alert('恭喜，您输入的号码正确！！！');
+			}else{
+				alert('对不起，您输入的号码不存在！！！');
+			}
+			//**********手机号码验证
+			// var int = new RegExp(/^\b\d{0,}\b$/);
+			// var pe = new RegExp(/^1([38]\d|4[579]|5[0-35-9]|7[0135-8])\d{8}$/);
+			// if (!int.test(text)) {
+			// 	alert('请输入电话号码！！！');
+			// }else if (pe.test(text)) {
+			// 	alert('恭喜，您输入的号码正确！！！');
+			// }else{
+			// 	alert('对不起，您输入的号码不存在！！！');
+			// }
+		}
+	</script>
+</body>
+</html>

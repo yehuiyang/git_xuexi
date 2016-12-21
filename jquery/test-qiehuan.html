@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		.bg{
+			background-color: #aaa;
+		}
+		#d{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background-color: green;
+			left: 30px;
+			top: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("li").mouseover(function(){
+				$(this).addClass("bg").siblings().removeClass("bg");
+			});
+			$("body").mousemove(function(e){
+				console.log(e);
+				// var w = e.pageX;
+				// var h = e.pageY;
+				// $("#d").css({"left":w+"px","top":h+"px"});
+				// console.log(w+"--"+h);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+	</div>
+	<div>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+		<ul>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+			<li>1213rfasvfew</li>
+		</ul>
+	</div>
+	<div id="d"></div>
+</body>
+</html>

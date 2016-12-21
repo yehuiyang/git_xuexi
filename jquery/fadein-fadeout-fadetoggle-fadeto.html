@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		.d{
+			width: 200px;
+			height: 100px;
+			color: green;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button[name=fadeout]").click(function(){
+				$("#id1").fadeOut(5000);
+			});
+			$("button[name=fadein]").click(function(){
+				$("#id1").fadeIn(5000);
+			});
+			$("button[name=fadetoggle]").click(function(){
+				$("#id1").fadeToggle(5000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button type="button" name="fadeout" >隐藏</button>
+	<button type="button" name="fadetoggle">隐藏或显示</button>
+	<button type="button" name="fadein">显示</button>
+	<div id="id1" class="d"></div>
+</body>
+</html>

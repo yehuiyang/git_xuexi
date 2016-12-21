@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log($("[name=a]").text());
+			console.log($("[sss]").html());
+			$("[name=a]").text('这是text测试');
+			console.log($("[name=a]").text());
+
+			console.log($("[sss]").html());
+			$("[sss]").html('这是HTML测试');
+			console.log($("[sss]").html());
+
+			console.log($("[value]").val());
+			$("[value]").val('这是val测试');
+			console.log($("[value]").val());
+		});
+	</script>
+</head>
+<body>
+	<a href="" name='a' sss="ssss">text-html-val<span>fasdf</span></a>
+	<input type="text" value="faegfeqdfc">
+</body>
+</html>

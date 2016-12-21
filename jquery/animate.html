@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		.d{
+			width: 200px;
+			height: 100px;
+			color: green;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button[name=animate]").click(function(){
+				$("#id1").animate({
+					width: '+=300px',
+					height: '+=200px',
+					fontSize: '50px'
+				},5000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button type="button" name="animate" >animate</button>
+	<div id="id1" class="d">这是一个动画</div>
+</body>
+</html>

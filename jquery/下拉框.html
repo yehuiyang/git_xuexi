@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		div{
+			width: 200px;
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul li{
+			list-style: none;
+			background-color: #dfffdf;
+		}
+		ul li a{
+			width: 170px;
+			display: inline-block;
+			padding: 10px 15px;
+			font-weight: 700;
+			color: #337ab7;
+		}
+		.uu{
+			display: none;
+		}
+		.uu .ll a{
+			/*display: none;*/
+			width: 140px;
+			display: inline-block;
+			font-weight: 300;
+			padding: 10px 30px;
+		}
+		.bg{
+			background-color: #ddd;
+		}
+		.cbg{
+			background-color: #ddd;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("li").mouseover(function(){
+				$(this).addClass("bg").siblings().removeClass("bg");
+			});
+			$("li").mouseout(function(){
+				$(this).removeClass("bg");
+			});
+			$("li").click(function(){
+				$(this).addClass("cbg").siblings().removeClass("cbg");;
+				$(this).children(1).css("display","block");
+				$(this).siblings().children("ul").css("display","none");
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<ul class="u">
+			<li class="l">
+				<a href="">列表1</a>
+				<ul class="uu">
+					<li class="ll"><a href="">项目1</a></li>
+					<li class="ll"><a href="">项目2</a></li>
+					<li class="ll"><a href="">项目3</a></li>
+				</ul>
+			</li>
+			<li class="l">
+				<a href="">列表2</a>
+				<ul class="uu">
+					<li class="ll"><a href="">项目1</a></li>
+					<li class="ll"><a href="">项目2</a></li>
+					<li class="ll"><a href="">项目3</a></li>
+				</ul>
+			</li>
+			<li class="l">
+				<a href="">列表3</a>
+				<ul class="uu">
+					<li class="ll"><a href="">项目1</a></li>
+					<li class="ll"><a href="">项目2</a></li>
+					<li class="ll"><a href="">项目3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

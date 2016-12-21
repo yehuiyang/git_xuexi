@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		a{
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			display: inline-block;
+			text-align: center;
+			line-height: 30px;
+		}
+		p{
+			background-color: #ddd;
+			display: none;
+		}
+		.block{
+			display: block;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("a[class^=acl]").click(function(e){
+				$("p").css("display","none");
+				$(".p"+$(this).attr("class")[3]).css("display","block");
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<a href="" class="acl1">1</a>
+	<a href="" class="acl2">2</a>
+	<a href="" class="acl3">3</a>
+	<p class="p1">123456</p>
+	<p class="p2">qwerty</p>
+	<p class="p3">!@#$%^</p>
+</body>
+</html>

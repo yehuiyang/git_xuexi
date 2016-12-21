@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var index = {
+			cache:true,//默认true
+			url:"ajax.php?get=1",
+			type:"POST",
+			data:"asd=123&zxc=321",
+			dataType:"json",
+			async:true,//默认true（开启异步）
+			beforeSend:function(xhr){
+			},
+			success:function(data,status){
+			},
+			error:function(e){
+			}
+		};
+		function sub(obj){
+			ajax(obj);
+			return false;
+		}
+		function ajax(obj){
+			var xmlhttp;
+			var data;
+			if (window.XMLHttpRequest){
+				xmlhttp=new XMLHttpRequest();
+			}else{
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			console.log(obj);
+			console.log(xmlhttp);
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					data=xmlhttp.responseText;
+				}
+			}
+			if () {
+				post();
+			}else{
+				get();
+			}
+		};
+		function get(url,){
+			xmlhttp.open("GET","ajax_test.asp",true);
+			xmlhttp.send();
+		}
+		function post(){
+			xmlhttp.open("POST","ajax_test.asp",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.send("fname=Bill&lname=Gates");
+		}
+	</script>
+	<script>
+		// 异步请求封装 IE6即以上浏览器
+		// ajax(url,fnSucc,selectID,fnFaild)
+		//url 请求地址
+		//fnSucc 异步请求后的内容处理函数
+		//fnFaild 请求失败处理函数
+		function ajax(url,fnSucc,fnFaild)
+		{
+		    //1.创建Ajax对象
+		    //非IE6
+		    var oAjax;
+		    if(window.XMLHttpRequest)//不会报错，只会是undefined
+		     {oAjax=new XMLHttpRequest();}
+		    else
+		    //iE6 IE5
+		     {oAjax=new ActiveXObject("Microsoft.XMLHTTP");}
+		    //alert(oAjax);
+		    //2.连接服务器
+		    //open(方法,文件名,异步传输)
+		    oAjax.open("get",url,true);//制止缓存
+		    //3.发送请求
+		    oAjax.send();
+		    //4.接收返回值 和服务器通讯的时候此事件发生
+		    oAjax.onreadystatechange=function()
+		    {
+		     //oAjax.readyState //浏览器和服务器，进行到哪一步了 异步握手过程
+		     if(oAjax.readyState==4)//读取完成（可能文件不存在）
+		     {
+		      if(oAjax.status==200 || oAjax.status==304)//请求成功 304即使浏览器缓存了也返回数据
+		      {
+		       fnSucc(oAjax.responseText);
+		       //alert("成功"+oAjax.responseText);
+		      }
+		      else
+		      {
+		       if(fnFaild)//fnFaild传进来时
+		       {
+		        fnFaild(oAjax.status);
+		       }
+		       //alert("失败:"+oAjax.status);//status为404
+		      }
+		     }
+		    }
+		}
+		window.onload=function(){
+		  var oBtn=document.getElementById("left");
+		  oBtn.onclick=function()
+		  {
+		      ajax("http://28967904.jsp.jspee.cn/ext/singlePage/list/json-1-1-20",function(str){
+		        var da= JSON.parse(str); //JSON数据解析
+		        alert(da.totalRow)
+		        },function(erorr){
+		          console.log('请求出错：'+erorr);
+		        })
+		  }
+		}
+</script>
+</head>
+<body>
+	<form action="YHYjaxa.php?asd=123" method="get" onsubmit="return sub(this)">
+		用户名：<input type="text" name="user">
+		密码：<input type="password" name="pass">
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

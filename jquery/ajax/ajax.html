@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// $("#b").click(function(){
+			// 	$("#xhr").load("ajax.php?get=1 pre:nth-child(2)",{"post1":"post1","post2":"post2"},function(a,b,c){
+			// 		console.log(a);
+			// 		console.log(b);
+			// 		console.log(c);
+			// 	});
+			// });
+			// $("#b1").click(function(){
+			// 	var inp = "input = "+$("input").val();
+			// 	$.get("ajax.php?get=1",function(data,status){
+			// 		console.log(data);
+			// 		console.log(status);
+			// 		$("#xhr1").html(inp);
+			// 		$("#xhr").html(data.REQUEST_TIME_FLOAT);
+			// 	});
+			// });
+			// $("#b2").click(function(){
+			// 	$.post("ajax.php?get=1",{"post1":"post1","post2":"post2"},function(data,status){
+			// 		console.log(data);
+			// 		console.log(status);
+			// 		$("#xhr").html(data.REQUEST_TIME_FLOAT);
+			// 	});
+			// });
+			// $("input").on("input",function(){
+			// 	var inp = "input = "+$("input").val();
+			// 	$.get("ajax.php?get=1",function(data,status){
+			// 		console.log(data);
+			// 		console.log(status);
+			// 		$("#xhr1").html(inp);
+			// 		$("#xhr").html(data.REQUEST_TIME_FLOAT);
+			// 	});
+			// });
+			var a = function(qaz){
+				$.ajax({
+					cache:true,//默认true
+					url:"ajax.php?get=1",
+					type:"POST",
+					data:"asd=123&zxc=321",
+					dataType:"json",
+					async:true,//默认true（开启异步）
+					beforeSend:function(xhr){
+						$("#b3").text('正在提交');
+					},
+					success:function(data,status){
+						qaz(data);
+					},
+					error:function(e){
+						$("#xhr").text(e);
+					}
+				});
+			}
+			$("#b3").click(function(){
+				// $.ajax({
+				// 	cache:true,//默认true
+				// 	url:"ajax.php?get=1",
+				// 	type:"POST",
+				// 	data:"asd=123&zxc=321",
+				// 	dataType:"json",
+				// 	async:true,//默认true（开启异步）
+				// 	beforeSend:function(xhr){
+				// 		$("#b3").text('正在提交');
+				// 	},
+				// 	success:function(data,status){
+				// 		$("#xhr").text(data.asd);
+				// 		$("#b3").text('ajax点击');
+				// 	},
+				// 	error:function(e){
+				// 		$("#xhr").text(e);
+				// 	}
+				// });
+				//回调函数
+				a(function(data){
+					$("#xhr").text(data.asd);
+					$("#b3").text('ajax点击');
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="xhr">ajax测试</p>
+	<p id="xhr1">ajax测试1</p>
+	<input type="text" id="in" name="in">
+	<button id="b" type="buttom">load点击</button>
+	<button id="b1" type="buttom">get点击</button>
+	<button id="b2" type="buttom">post点击</button>
+	<button id="b3" type="buttom">ajax点击</button>
+</body>
+</html>

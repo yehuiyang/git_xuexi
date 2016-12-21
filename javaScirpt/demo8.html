@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var form = document.getElementsByName('form1')[0];
+			form.btn.onclick = function(){
+				if (!/^\w{6,12}$/.test(form.user.value)) { 
+					alert('用户名错误！');
+					return false;
+				}
+				if (!/^.{6,16}$/.test(form.pass.value)) { 
+					alert('密码错误！');
+					return false;
+				}
+				if (!/^\w{1,}@\w{1,}.[a-zA-Z]{2,3}$/.test(form.email.value)) { 
+					alert('邮箱错误！');
+					return false;
+				}
+				form.submit();
+			};
+		};
+	</script>
+</head>
+<body>
+	<form name="form1" action="" method="get" style="display: inline-flex;">
+		<input type="text" name="user">
+		<input type="password" name="pass">
+		<input type="text" name="email">
+		<input type="submit" name="submit按钮">
+		<button type="button" name="btn">button按钮</button>
+	</form>
+</body>
+</html>
+493731593@qq.com

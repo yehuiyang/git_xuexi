@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		// function ob(){
+		// 	var ele = document.getElementById('img');
+		// 	var attr = ele.getAttribute('src');
+		// 	if (attr == 'image/0.png') {
+		// 		ele.setAttribute('src','image/1.png');
+		// 	}else{
+		// 		ele.setAttribute('src','image/0.png');
+		// 	}
+		// }
+		function ob(){
+			var ele = document.getElementsByTagName('img')[0];
+			if (ele.src.indexOf('1.png')>-1) {
+				ele.src = '0.png';
+			}else{
+				ele.src = '1.png';
+			}
+		}
+		// function ob(){
+		// 	var ele = document.getElementById('img');
+		// 	var attr = ele.getAttribute('src')=='image/0.png'?'image/1.png':'image/0.png';
+		// 	ele.setAttribute('src',attr);
+		// }
+	</script>
+</head>
+<body>
+	<div><img id="img" src="image/0.png" onclick="ob()"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// var str = '123456789aWEDFV123456789SZAFQcawd51261354135';
+		// var pp = new RegExp(/[1-9]\d{4,9}/,'g');
+		// // console.log(pp.exec(str));
+		// // console.log(pp.exec(str));
+
+		// console.log(str.split(pp));
+		function isScalar(value){
+			switch(typeof value){
+				case 'string':
+				case 'number':
+				case 'boolean':
+					return true;
+				break;
+				default:
+					return false;
+				break;
+			}
+		}
+		alert(isScalar(1241254.135125));
+	</script>
+</head>
+<body>
+	电话验证：^1([38]\d|4[579]|5[0-35-9]|7[0135-8])\d{8}$
+</body>
+</html>
